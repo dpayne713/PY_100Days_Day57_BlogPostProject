@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <body>
+    <div class="wrapper">
+        <div class="top">
+            <div class="title"><h1>My Blog</h1></div>
+        </div>
+        {% for x in posts%}
+            <div class="content">
+                <div class="card">
+                    <h2>{{x.title}}</h2>
+                    <p class="text">{{x.subtitle}} </p>
+                    <a href="{{ url_for('post', num=x.id) }}">Read</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </body>
+{% endblock %}
